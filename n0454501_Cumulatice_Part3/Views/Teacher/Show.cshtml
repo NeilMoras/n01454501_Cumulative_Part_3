@@ -1,0 +1,22 @@
+﻿@model n0454501_Cumulatice_Part3.Models.Teacher
+
+@{
+    ViewBag.Title = "Show";
+}
+<nav>
+    <a class="backlink" href="/Teacher/List">Return to the Teachers List</a>
+    <a class="dellink" href="/Teacher/DeleteConfirm/@Model.TeacherId">Delete</a>
+    <a class="backlink" href="/Teacher/Update/@Model.TeacherId">Update</a>
+
+</nav>
+<h2 class="teacher-show-head">About @Model.TeacherFname</h2>
+
+
+<div class="teach-list-div">
+    <ul class="teach-list">
+        <li><b>Teacher Name</b>: @Model.TeacherFname @Model.TeacherLname</li>
+        <li><b>Employee Number</b> : @Model.EmployeeNumber</li>
+        <li><b>Hire Date</b>: @Model.HireDate</li>
+        <li><b>Salary</b>: @Model.Salary</li>
+    </ul>
+</div>

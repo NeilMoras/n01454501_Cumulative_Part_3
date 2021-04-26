@@ -1,0 +1,29 @@
+﻿
+@model IEnumerable<n0454501_Cumulatice_Part3.Models.Teacher>
+@{
+    ViewBag.Title = "List";
+}
+
+<nav>
+    <a class="backlink" href="/Teacher/New">Record New Teacher</a>
+
+</nav>
+
+<h2 class="teacher-list-heading">Teachers List</h2>
+<p class="teacher-para">Here is th a list of teachers who would be teaching for the Winter 2018 intake </p>
+
+<p>You can search Teachers List by First Name, Last Name, Hired date and also Salary.</p>
+
+
+<form action="/Teacher/List" method="GET">
+
+    <input type="text" name="SearchKey" />
+    <button class="btn btn-primary" type="submit" value="Search">Search</button>
+</form>
+
+
+
+@foreach (var teacher in Model)
+{
+    <div class="teacher-list-name"><a href="/Teacher/Show/@teacher.TeacherId">@teacher.TeacherFname @teacher.TeacherLname</a></div>
+}

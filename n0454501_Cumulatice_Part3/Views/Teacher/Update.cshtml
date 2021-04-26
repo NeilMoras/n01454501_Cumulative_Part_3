@@ -1,0 +1,139 @@
+﻿@model n0454501_Cumulatice_Part3.Models.Teacher
+@{
+    ViewBag.Title = "Update";
+}
+
+<nav>
+    <a class="backlink" href="/Teacher/Show/@Model.TeacherId">Back</a>
+  
+</nav>
+<h2>Update Existing Teacher Records</h2>
+<form method="POST" action="/Teacher/Update/@Model.TeacherId/" name="form_new_teacher" onsubmit="return runForm()">
+    <div class="form-div">
+        <label for="TeacherFname">First Name:</label>
+        <input id="TeacherFname" type="text" name="TeacherFname" value="@Model.TeacherFname" /><span id="fname"></span>
+    </div>
+    <div class="form-div">
+        <label for="TeacherLname">Last Name:</label>
+        <input id="TeacherLname" type="text" name="TeacherLname" value="@Model.TeacherLname"/><span id="lname"></span>
+    </div>
+    <div class="form-div">
+        <label for="EmployeeNumber">Employee Number:</label>
+        <input id="EmployeeNumber" type="text" name="EmployeeNumber" value="@Model.EmployeeNumber" /><span id="empid"></span>
+    </div>
+    <div class="form-div">
+        <label for="HireDate">Hire Date:</label>
+        <input id="HireDate" type="date" name="HireDate" value="@Model.HireDate" /><span class="hire-date">Hiring Date in current Record: @Model.HireDate</span><span id="hiredt"></span>
+         
+    </div>
+    <div class="form-div">
+        <label for="Salary">Salary:</label>
+        <input id="Salary" type="text" name="Salary" value="@Model.Salary"/><span id="slry"></span>
+    </div>
+    <div class="form-div">
+        <button class="btn-submit" type="submit">
+            Update Author
+        </button>
+    </div>
+
+
+
+</form>
+
+<script>
+
+    // grabbing the entire form element by its name
+  var formHandle = document.forms.form_new_teacher;
+
+
+
+
+
+      function runForm() {
+
+
+           // grabbing the elements and settiing it in a variable
+          var fName = formHandle.TeacherFname;
+          var lName = formHandle.TeacherLname;
+          var empNumber = formHandle.EmployeeNumber;
+          var hireDate = formHandle.HireDate;
+          var salary = formHandle.Salary;
+          var inputRequired = "Input Field Required!";
+          var fNameSpan = document.getElementById("fname");
+          var lNameSpan = document.getElementById("lname");
+          var empnmbrSpan = document.getElementById("empid");
+          var hireDtSpan = document.getElementById("hiredt");
+          var slrySpan = document.getElementById("slry");
+
+          // if statement to validate the first name of the user Teacher data input
+        if (fName.value === "" || fName.value === null) {
+
+            fName.style.borderColor = "red";
+            fName.focus();
+            fNameSpan.innerHTML = inputRequired;
+            return false;
+
+
+        } else {
+            fName.style.borderColor = "white";
+            fNameSpan.innerHTML = " ";
+        }
+
+
+          // if statement to validate the Last name of the user Teacher data input
+        if (lName.value === "" || lName.value === null) {
+
+            lName.style.borderColor = "red";
+            lName.focus();
+            lNameSpan.innerHTML = inputRequired;
+            return false;
+
+        } else {
+            lName.style.borderColor = "white";
+            lNameSpan.innerHTML = " ";
+        }
+
+           // if statement to validate the Employee Number of the user Teacher data input
+        if (empNumber.value === "" || empNumber.value === null) {
+
+            empNumber.style.borderColor = "red";
+            empNumber.focus();
+            empnmbrSpan.innerHTML = inputRequired;
+            return false;
+
+        } else {
+            empNumber.style.borderColor = "white";
+            empnmbrSpan.innerHTML = " ";
+        }
+
+           // if statement to validate the HireDate of the user Teacher data input
+        if (hireDate.value === "" || hireDate.value === null) {
+
+            hireDate.style.borderColor = "red";
+            hireDate.focus();
+            hireDtSpan.innerHTML = inputRequired;
+            return false;
+
+        } else {
+            hireDate.style.borderColor = "white";
+            hireDtSpan.innerHTML = " ";
+        }
+
+
+           // if statement to validate the Salary of the user Teacher data input
+        if (salary.value === " " || salary.value === null) {
+
+            salary.style.borderColor = "red";
+            salary.focus();
+            slrySpan.innerHTML = inputRequired;
+            return false;
+
+        } else {
+            salary.style.borderColor = "white";
+            slrySpan.innerHTML = " ";
+        }
+
+         // return false;
+    }
+
+    </script>

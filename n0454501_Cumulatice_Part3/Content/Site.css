@@ -1,0 +1,150 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: #DBF3FA;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+/*Class/List CSS */
+.course-list-name {
+    padding: 0.15em;
+    font-size: 1.5em;
+}
+
+.course-list-heading {
+    font-size: 2.5em;
+    font-family: Marlett, sans-serif;
+}
+
+/*Class/Show CSS */
+
+.sub-show-heading {
+    margin-bottom: 1em;
+}
+
+table, td, th {
+    border: 1px solid black;
+    padding: 1em;
+}
+
+th {
+    font-size: 1.5em;
+}
+
+
+
+/*Teacher/List CSS */
+.teacher-list-name {
+    padding: 0.15em;
+    font-size: 1.5em;
+}
+
+.teacher-para {
+    font-size: 1.4em;
+}
+
+.teacher-list-heading {
+    font-size: 2.5em;
+}
+
+/*Student/List CSS */
+.student-list-name {
+    padding: 0.15em;
+    font-size: 1.5em;
+}
+
+.student-list-heading {
+    font-size: 2.5em;
+    font-family: Marlett, sans-serif;
+}
+
+.student-para {
+    font-size: 1.2em;
+}
+
+.return-click {
+    padding-top: 50px;
+}
+
+
+.backlink {
+    margin: 2em 0 0 2em;
+    display: inline-block;
+}
+
+.dellink {
+    float: right;
+    margin-left: 3em;
+    
+    color: red;
+    display: inline-block;
+    margin: 2em 0 0 4em;
+}
+
+.btn-danger {
+    margin: 2em;
+}
+
+
+.form-div {
+    padding: 0.5em;
+}
+
+.delete-container {
+    margin: 10em;
+}
+
+
+nav {
+    display: inline-block
+}
+
+form {
+    display: inline-block;
+}
+
+
+
+.teach-list {
+    padding: 1em;
+}
+
+    .teach-list li {
+        padding: 0.5em;
+        font-size: 1.5em;
+    }
+
+
+
+.btn-submit {
+    background-color: #26abff;
+    border: 1px solid #0859c6;
+    
+    border-radius: 5px;
+    color: #fff;
+}
+
+    .btn-submit:hover {
+        transform: scale(1.2);
+    }
+
+span {
+    margin-left: 1em;
+    color: red;
+    font-size: 0.9em;
+}
+
+.hire-date {
+    color: #000;
+}

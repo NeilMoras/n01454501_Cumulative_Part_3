@@ -1,0 +1,15 @@
+﻿@model n0454501_Cumulatice_Part3.Models.Student
+
+@{
+    ViewBag.Title = "Show";
+}
+
+<nav>
+    <a class="backlink" href="/Student/List">Return to the Students List</a>
+    <a class="dellink" href="/Student/DeleteConfirm/@Model.StudentId">Delete</a>
+    <a class="backlink" href="/Student/Update/@Model.StudentId">Update</a>
+</nav>
+
+<h2>About </h2>
+
+<p>Hello! My name is @Model.StudentFname @Model.StudentLname . My student Number is @Model.StudentNumber and my enrollment date is @Model.EnrolDate</p>

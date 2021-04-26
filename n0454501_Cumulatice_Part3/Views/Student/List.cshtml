@@ -1,0 +1,26 @@
+﻿@model IEnumerable<n0454501_Cumulatice_Part3.Models.Student>
+@{
+    ViewBag.Title = "List";
+}
+
+<nav>
+    <a class="backlink" href="/Student/New">Record New Student</a>
+
+</nav>
+<h2 class="student-list-head">List Students</h2>
+<p class="student-para">Here is a list of students who are enrolled for the Winter 2018 intake</p>
+<p>You can search Students List by First Name, Last Name, Student Number and also EnrolDate.</p>
+<form action="/Student/List" method="GET">
+    <input type="text" name="SearchKey" />
+    <button class="btn btn-primary" type="submit" value="Search">Search</button>
+</form>
+@{
+
+    foreach (var student in Model)
+    {
+        <div class="student-list-name"><a href="/Student/Show/@student.StudentId">@student.StudentFname @student.StudentLname</a></div>
+
+
+
+    }
+}

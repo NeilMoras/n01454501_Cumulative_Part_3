@@ -1,0 +1,140 @@
+﻿@{
+    ViewBag.Title = "New Teacher Entry";
+}
+
+<nav>
+    <a class="backlink" href="/Teacher/List">Return to the Teachers List</a>
+
+</nav>
+<h2>New Teacher</h2>
+<form method="POST" action="/Teacher/Add" name="form_new_teacher" onsubmit="return runForm()">
+    <div class="form-div">
+        <label for="TeacherFname">First Name:</label>
+        <input id="TeacherFname" type="text" name="TeacherFname" /><span id="fname"></span>
+    </div>
+    <div class="form-div">
+        <label for="TeacherLname">Last Name:</label>
+        <input id="TeacherLname" type="text" name="TeacherLname" /><span id="lname"></span>
+    </div>
+    <div class="form-div">
+        <label for="EmployeeNumber">Employee Number:</label>
+        <input id="EmployeeNumber" type="text" name="EmployeeNumber" /><span id="empid"></span>
+    </div>
+    <div class="form-div">
+        <label for="HireDate">Hire Date:</label>
+        <input id="HireDate" type="date" name="HireDate" /><span id="hiredt"></span>
+    </div>
+    <div class="form-div">
+        <label for="Salary">Salary:</label>
+        <input id="Salary" type="text" name="Salary" /><span id="slry"></span>
+    </div>
+    <div class="form-div">
+        <button class="btn-submit" type="submit">
+            Submit
+        </button>
+    </div>
+
+
+
+</form>
+
+<script>
+
+    // grabbing the entire form element by its name
+  var formHandle = document.forms.form_new_teacher;
+
+
+
+
+
+      function runForm() {
+
+
+           // grabbing the elements and settiing it in a variable
+          var fName = formHandle.TeacherFname;
+          var lName = formHandle.TeacherLname;
+          var empNumber = formHandle.EmployeeNumber;
+          var hireDate = formHandle.HireDate;
+          var salary = formHandle.Salary;
+          var inputRequired = "Input Field Required!";
+          var fNameSpan = document.getElementById("fname");
+          var lNameSpan = document.getElementById("lname");
+          var empnmbrSpan = document.getElementById("empid");
+          var hireDtSpan = document.getElementById("hiredt");
+          var slrySpan = document.getElementById("slry");
+
+          // if statement to validate the first name of the user Teacher data input
+        if (fName.value === "" || fName.value === null) {
+
+            fName.style.borderColor = "red";
+            fName.focus();
+            fNameSpan.innerHTML = inputRequired;
+            return false;
+
+
+        } else {
+            fName.style.borderColor = "white";
+            fNameSpan.innerHTML = " ";
+        }
+
+
+          // if statement to validate the Last name of the user Teacher data input
+        if (lName.value === "" || lName.value === null) {
+
+            lName.style.borderColor = "red";
+            lName.focus();
+            lNameSpan.innerHTML = inputRequired;
+            return false;
+
+        } else {
+            lName.style.borderColor = "white";
+            lNameSpan.innerHTML = " ";
+        }
+
+           // if statement to validate the Employee Number of the user Teacher data input
+        if (empNumber.value === "" || empNumber.value === null) {
+
+            empNumber.style.borderColor = "red";
+            empNumber.focus();
+            empnmbrSpan.innerHTML = inputRequired;
+            return false;
+
+        } else {
+            empNumber.style.borderColor = "white";
+            empnmbrSpan.innerHTML = " ";
+        }
+
+           // if statement to validate the HireDate of the user Teacher data input
+        if (hireDate.value === "" || hireDate.value === null) {
+
+            hireDate.style.borderColor = "red";
+            hireDate.focus();
+            hireDtSpan.innerHTML = inputRequired;
+            return false;
+
+        } else {
+            hireDate.style.borderColor = "white";
+            hireDtSpan.innerHTML = " ";
+        }
+
+
+           // if statement to validate the Salary of the user Teacher data input
+        if (salary.value === " " || salary.value === null) {
+
+            salary.style.borderColor = "red";
+            salary.focus();
+            slrySpan.innerHTML = inputRequired;
+            return false;
+
+        } else {
+            salary.style.borderColor = "white";
+            slrySpan.innerHTML = " ";
+        }
+
+         // return false;
+      }
+
+
+
+
+</script>

@@ -1,0 +1,17 @@
+﻿@model IEnumerable<n0454501_Cumulatice_Part3.Models.Class>
+@{
+    ViewBag.Title = "List";
+}
+
+h2 class="course-list-head">Courses List</h2>
+
+@{ foreach (var course in Model)
+    {
+        // lists the Courses to the web browser and links it to the  teacher/Show view to display information about each course
+        <div class="course-list-name"><a href="/Class/Show/@course.ClassId">@course.ClassName</a></div>
+
+    }
+
+
+}
+

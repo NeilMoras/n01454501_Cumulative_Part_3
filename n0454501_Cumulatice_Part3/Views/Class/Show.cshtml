@@ -1,0 +1,24 @@
+﻿@model n0454501_Cumulatice_Part3.Models.Class
+@{
+    ViewBag.Title = "Show";
+}
+
+<a href="/Class/List">Return to the Class List</a>
+<h2 class="sub-show-heading">@Model.ClassName Subject Details</h2>
+
+<table>
+    <tr>
+        <th>Class Code</th>
+        <th>Class Name</th>
+        <th>Start Date</th>
+        <th>Finish Date</th>
+    </tr>
+    <tr>
+        <td>@Model.ClassCode</td>
+        <td>@Model.ClassName</td>
+        <td>@Model.StartDate</td>
+        <td>@Model.FinishDate</td>
+    </tr>
+
+</table>
+

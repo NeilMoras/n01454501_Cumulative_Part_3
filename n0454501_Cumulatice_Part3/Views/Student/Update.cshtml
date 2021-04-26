@@ -1,0 +1,122 @@
+﻿@model n0454501_Cumulatice_Part3.Models.Student
+@{
+    ViewBag.Title = "Update";
+}
+
+<nav>
+    <a class="backlink" href="/Student/Show/@Model.StudentId">Back</a>
+
+</nav>
+<h2>Update Student Records</h2>
+<form method="POST" action="/Student/Update/@Model.StudentId" name="form_new_student">
+    <div class="form-div">
+        <label for="StudentFname">First Name:</label>
+        <input id="StudentFname" type="text" name="StudentFname" value="@Model.StudentFname" /><span id="stfield1"></span>
+    </div>
+    <div class="form-div">
+        <label for="StudentLname">Last Name:</label>
+        <input id="StdentLname" type="text" name="StudentLname" value="@Model.StudentLname"/><span id="stfield2"></span>
+    </div>
+    <div class="form-div">
+        <label for="StudentNumber">Student Number:</label>
+        <input id="StudentNumber" type="text" name="StudentNumber" value="@Model.StudentNumber" /><span id="stfield3"></span>
+    </div>
+    <div class="form-div">
+        <label for="EnrolDate">Enrol Date:</label>
+        <input id="EnrolDate" type="date" name="EnrolDate" value="@Model.EnrolDate" /><span class="hire-date">Enrol Date in current Record: @Model.EnrolDate</span><span id="stfield4"></span>
+    </div>
+
+    <div class="form-div">
+        <button type="submit" class="btn-submit">
+            Submit
+        </button>
+    </div>
+
+
+
+</form>
+
+
+<script>
+
+    var formHandle = document.forms.form_new_student;
+
+
+    formHandle.onsubmit = runStudentValidation;
+
+
+
+
+    function runStudentValidation() {
+
+
+        // grabbing the elements and settiing it in a variable
+        var fName = formHandle.StudentFname;
+        var lName = formHandle.StudentLname;
+        var studentNumber = formHandle.StudentNumber;
+        var enrolDate = formHandle.EnrolDate;
+        var inputRequired = "Input Field Required!";
+        var fNameSpan = document.getElementById("stfield1");
+        var lNameSpan = document.getElementById("stfield2");
+        var stNumbrSpan = document.getElementById("stfield3");
+        var enrolDateSpan = document.getElementById("stfield4");
+
+
+        // if statement to validate the first name of the student input
+        if (fName.value === "" || fName.value === null) {
+
+            fName.style.borderColor = "red";
+            fName.focus();
+            fNameSpan.innerHTML = inputRequired;
+            return false;
+
+
+        } else {
+            fName.style.borderColor = "white";
+            fNameSpan.innerHTML = " ";
+        }
+
+        // if statement to validate the last name of the student input
+        if (lName.value === "" || lName.value === null) {
+
+            lName.style.borderColor = "red";
+            lName.focus();
+            lNameSpan.innerHTML = inputRequired;
+            return false;
+
+        } else {
+            lName.style.borderColor = "white";
+            lNameSpan.innerHTML = " ";
+        }
+        // if statement to validate the Student Number of the student input
+        if (studentNumber.value === "" || studentNumber.value === null) {
+
+            studentNumber.style.borderColor = "red";
+            studentNumber.focus();
+            stNumbrSpan.innerHTML = inputRequired;
+            return false;
+
+        } else {
+            studentNumber.style.borderColor = "white";
+            stNumbrSpan.innerHTML = " ";
+        }
+
+        // if statement to validate the Enrol Date of the student input
+        if (enrolDate.value === "" || enrolDate.value === null) {
+
+            enrolDate.style.borderColor = "red";
+            enrolDate.focus();
+            enrolDateSpan.innerHTML = inputRequired;
+            return false;
+
+        } else {
+            enrolDate.style.borderColor = "white";
+            enrolDateSpan.innerHTML = " ";
+        }
+
+
+
+        // return false;
+    }
+
+</script>

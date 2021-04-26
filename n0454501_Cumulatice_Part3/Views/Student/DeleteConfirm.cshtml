@@ -1,0 +1,24 @@
+﻿@model n0454501_Cumulatice_Part3.Models.Student
+@{
+    ViewBag.Title = "DeleteConfirm";
+}
+
+<div class="delete-container">
+
+
+
+    <h2>Are you sure you want to delete Student @Model.StudentFname @Model.StudentLname?</h2>
+    <p>This action cannot be undone.</p>
+
+    <div delete-btn-div>
+        <nav>
+            <a class="backlink" href="/Student/Show/@Model.StudentId">Cancel</a>
+
+        </nav>
+        <form method="POST" action="/Student/Delete/@Model.StudentId">
+            <button class="btn btn-danger">Confirm Delete</button>
+        </form>
+    </div>
+
+</div>
+
