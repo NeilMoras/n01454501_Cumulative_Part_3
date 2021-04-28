@@ -64,7 +64,7 @@ namespace n0454501_Cumulatice_Part3.Controllers
             return View();
         }
 
-
+      
 
 
         //POST : /Teacher/Add
@@ -87,10 +87,11 @@ namespace n0454501_Cumulatice_Part3.Controllers
         [HttpGet]
         //GET : /Teacher/Update/{id}
         /// <summary>
-        /// 
+        /// Routes to a dynamically generated " Teacher Update" Page. Gathers information from the database.
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
+        /// <param name="id">TeacherId </param>
+        /// <returns>A dynamic "Update Teacher" webpage which porived the current information of the teacher aand asks for new infomration as part of a form </returns>
+        /// <example>:/ Teacher/Update/6</example>
         public ActionResult Update(int id)
         {
             // get accesss from the Teachers dataController
@@ -98,6 +99,23 @@ namespace n0454501_Cumulatice_Part3.Controllers
             Teacher SelectedTeacher = controller.FindTeacher(id);
             return View(SelectedTeacher);
         }
+
+        /// <summary>
+        /// Updating the teachers information with the help of AJAX request
+        /// </summary>
+        /// <param name="id"> teacher id</param>
+        /// <returns></returns>
+
+        public ActionResult Ajax_Update(int id)
+        {
+            TeacherDataController controller = new TeacherDataController();
+            Teacher SelectedTeacher = controller.FindTeacher(id);
+
+            return View(SelectedTeacher);
+        }
+
+
+
 
         [HttpPost]
         //POST : /Teacher/Update/{id}

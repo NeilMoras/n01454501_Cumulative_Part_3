@@ -6,6 +6,8 @@ using System.Net.Http;
 using System.Web.Http;
 using n0454501_Cumulatice_Part3.Models;// using the models folder inorder to access the teacher defining feilds and the database
 using MySql.Data.MySqlClient;// connects to the mySql database NuGet package
+using System.Web.Http.Cors;
+using System.Diagnostics;
 
 
 namespace n0454501_Cumulatice_Part3.Controllers
@@ -184,13 +186,32 @@ namespace n0454501_Cumulatice_Part3.Controllers
             Connection.Close();
         }
 
-
-
+        /// <summary>
+        /// Updates an Author on MySQL
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="TeacherInfo">An object with the fields that the map to the colums of the teacher's table</param>
+        /// <example>
+        /// POST/api/TeacherDATA/uPDATEtEACHER/208
+        /// FORM DATA/ POST DATA/ REQUEST BODY
+        /// {
+        /// "TeacherFname":"Nelson",
+        /// "TeacherLname": "Mandela",
+        /// "EmployeeNumber": "T844",
+        /// "HireDate":"2015-03-02",
+        /// "Salary":"40.56"
+        /// }
+        /// </example>
+        [HttpPost]
+        [EnableCors(origins: "*",methods: "*",headers: "*")]
         public void UpdateTeacher(int id, [FromBody]Teacher TeacherInfo)
         {
             //Links and creates a connection to mySql database
             MySqlConnection Connection = School.AccessDatabase();
             //Connection linked and opens between the database and the web server
+
+            Debug.WriteLine(TeacherInfo.TeacherFname);
+
             Connection.Open();
             //creates a new command to run the query from the database
             MySqlCommand Command = Connection.CreateCommand();

@@ -1,0 +1,57 @@
+﻿@model n0454501_Cumulatice_Part3.Models.Teacher
+@{
+    ViewBag.Title = "Ajax Update";
+}
+@{ 
+    // This firle uses a combination fo server rendering adn ajax logic
+    // Server Rendering to pull current information about the author and display in fields
+    // Request to update Teacher with new values is fullfilled by ajax
+
+}
+<nav>
+    <a class="backlink" href="/Teacher/List">Back</a>
+
+</nav>
+<h2>Update @Model.TeacherFname @Model.TeacherLname</h2>
+@{
+//Ajax request to Add Teacher
+// No form submission needed
+//Button onclick will handle form submission
+// Each Item has a n ID for validation @ ajax submission
+
+}
+
+    <div class="form-div">
+        <label for="TeacherFname">First Name:</label>
+        <input id="TeacherFname" type="text" name="TeacherFname" value="@Model.TeacherFname"/><span id="fname"></span>
+    </div>
+    <div class="form-div">
+        <label for="TeacherLname">Last Name:</label>
+        <input id="TeacherLname" type="text" name="TeacherLname" value="@Model.TeacherLname"/><span id="lname"></span>
+    </div>
+    <div class="form-div">
+        <label for="EmployeeNumber">Employee Number:</label>
+        <input id="EmployeeNumber" type="text" name="EmployeeNumber" value="@Model.EmployeeNumber"/><span id="empid"></span>
+    </div>
+    <div class="form-div">
+        <label for="HireDate">Hire Date:</label>
+        <input id="HireDate" type="date" name="HireDate" value="@Model.HireDate" /><span class="hire-date">Hiring Date in current Record: @Model.HireDate</span><span id="hiredt"></span>
+
+    </div>
+    <div class="form-div">
+        <label for="Salary">Salary:</label>
+        <input id="Salary" type="text" name="Salary" value="@Model.Salary" /><span id="slry"></span>
+    </div>
+    <div class="form-div">
+        <button class="btn-submit" onclick="UpdateTeacher(@Model.TeacherId">
+            Update Author
+        </button>
+    </div>
+
+
+
+
+
+
+   
+
