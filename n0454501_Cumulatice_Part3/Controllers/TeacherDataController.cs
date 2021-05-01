@@ -187,7 +187,7 @@ namespace n0454501_Cumulatice_Part3.Controllers
         }
 
         /// <summary>
-        /// Updates an Author on MySQL
+        /// Updates an Teacher on MySQL
         /// </summary>
         /// <param name="id"></param>
         /// <param name="TeacherInfo">An object with the fields that the map to the colums of the teacher's table</param>
@@ -195,12 +195,12 @@ namespace n0454501_Cumulatice_Part3.Controllers
         /// POST/api/TeacherDATA/uPDATEtEACHER/208
         /// FORM DATA/ POST DATA/ REQUEST BODY
         /// {
-        /// "TeacherFname":"Nelson",
-        /// "TeacherLname": "Mandela",
-        /// "EmployeeNumber": "T844",
-        /// "HireDate":"2015-03-02",
-        /// "Salary":"40.56"
-        /// }
+        ///"TeacherFname": "John",
+        ///"TeacherLname": "Wick",
+        ///"EmployeeNumber":"T666",
+        ///"HireDate":"2020-03-06",
+        ///"Salary":"45.78"
+        ///}
         /// </example>
         [HttpPost]
         [EnableCors(origins: "*",methods: "*",headers: "*")]

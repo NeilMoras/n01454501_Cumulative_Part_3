@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using n0454501_Cumulatice_Part3.Models;///using teachers models field as a reference
-using System.Diagnostics;// tool used for debugging
+using System.Diagnostics;/// tool used for debugging
 
 
 namespace n0454501_Cumulatice_Part3.Controllers
@@ -134,14 +134,14 @@ namespace n0454501_Cumulatice_Part3.Controllers
         /// 
         /// FORM DATA/ POST DATA/ REQUEST BODY
         /// {
-        /// "TeacherFname":"Nelson",
-        /// "TeacherLname": "Mandela",
-        /// "EmployeeNumber": "T844",
-        /// "HireDate":"2015-03-02",
-        /// "Salary":"40.56"
-        /// }
-        /// </example>
-        public ActionResult Update(int id, string TeacherFname, string TeacherLname, string EmployeeNumber, DateTime HireDate, decimal Salary)
+        ///"TeacherFname": "John",
+        ///"TeacherLname": "Wick",
+        ///"EmployeeNumber":"T666",
+        ///"HireDate":"2020-03-06",
+        ///"Salary":"45.78"
+        ///}
+    /// </example>
+    public ActionResult Update(int id, string TeacherFname, string TeacherLname, string EmployeeNumber, DateTime HireDate, decimal Salary)
         {
             //Indentify the inputs are provided from the form
             Teacher TeacherInfo = new Teacher();

@@ -120,18 +120,18 @@
         }
 
 
-           // if statement to validate the Salary of the user Teacher data input
-        if (salary.value === " " || salary.value === null) {
 
-            salary.style.borderColor = "red";
-            salary.focus();
-            slrySpan.innerHTML = inputRequired;
-            return false;
+          if (salary.value === "" || salary.value === null) {
 
-        } else {
-            salary.style.borderColor = "white";
-            slrySpan.innerHTML = " ";
-        }
+              salary.style.borderColor = "red";
+              salary.focus();
+              slrySpan.innerHTML = inputRequired;
+              return false;
+
+          } else {
+              salary.style.borderColor = "white";
+              slrySpan.innerHTML = " ";
+          }
 
          // return false;
     }

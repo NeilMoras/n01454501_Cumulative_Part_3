@@ -6,7 +6,8 @@ using System.Net.Http;
 using System.Web.Http;
 using n0454501_Cumulatice_Part3.Models; // using the models folder inorder to access the student defining feilds and the database
 using MySql.Data.MySqlClient; // connects to the mySql database NuGet package
-
+using System.Diagnostics;
+using System.Web.Http.Cors;
 
 namespace n0454501_Cumulatice_Part3.Controllers
 {
@@ -173,10 +174,22 @@ namespace n0454501_Cumulatice_Part3.Controllers
 
 
         /// <summary>
-        /// Updates an existing student to the exitisting database table 
+        /// Updates an Student on MySQL
         /// </summary>
-        /// <param name="NewStudent"></param>
+        /// <param name="id"></param>
+        /// <param name="StudentInfo">An object with the fields that the map to the colums of the teacher's table</param>
+        /// <example>
+        /// POST/api/StudentData/UpdateStudent/12
+        /// FORM DATA/ POST DATA/ REQUEST BODY
+         ///  {
+        ///"StudentFname":"Jon",
+        ///"StudentLname": "Don",
+        ///  "StudentNumber": "N6666",
+        ///"EnrolDate":"2018-04-02"
+        ///}     
+        /// </example>
         [HttpPost]
+        [EnableCors(origins: "*", methods: "*", headers: "*")]
         public void UpdateStudent(int id, [FromBody] Student StudentInfo)
         {
             //Links and creates a connection to mySql database
@@ -186,12 +199,12 @@ namespace n0454501_Cumulatice_Part3.Controllers
             //creates a new command to run the query from the database
             MySqlCommand Command = Connection.CreateCommand();
 
-            Command.CommandText = " update students set studentfname=@StudentFname, studentlname=@StudentLname,studentnumber=@StudentNumber,enroldate=@EnrolDate";
+            Command.CommandText = "update students set studentfname=@StudentFname, studentlname=@StudentLname,studentnumber=@StudentNumber,enroldate=@EnrolDate where studentid=@StudentId";
             Command.Parameters.AddWithValue("@StudentFname", StudentInfo.StudentFname);
             Command.Parameters.AddWithValue("@StudentLname", StudentInfo.StudentLname);
             Command.Parameters.AddWithValue("@StudentNumber", StudentInfo.StudentNumber);
             Command.Parameters.AddWithValue("@EnrolDate", StudentInfo.EnrolDate);
-
+            Command.Parameters.AddWithValue("@StudentId", id);
             Command.Prepare();
 
             Command.ExecuteNonQuery();
